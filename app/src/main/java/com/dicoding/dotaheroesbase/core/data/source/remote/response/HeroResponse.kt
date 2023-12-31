@@ -26,25 +26,22 @@ data class HeroResponseItem(
 	val id: Int? = null,
 
 	@field:SerializedName("str_gain")
-	val strGain: Any? = null,
+	val strGain: Float? = null,
 
 	@field:SerializedName("night_vision")
 	val nightVision: Int? = null,
 
 	@field:SerializedName("attack_rate")
-	val attackRate: Any? = null,
+	val attackRate: Float? = null,
 
 	@field:SerializedName("base_str")
 	val baseStr: Int? = null,
 
 	@field:SerializedName("agi_gain")
-	val agiGain: Any? = null,
+	val agiGain: Float? = null,
 
 	@field:SerializedName("attack_point")
-	val attackPoint: Any? = null,
-
-	@field:SerializedName("name")
-	val name: String? = null,
+	val attackPoint: Float? = null,
 
 	@field:SerializedName("projectile_speed")
 	val projectileSpeed: Int? = null,
@@ -80,13 +77,13 @@ data class HeroResponseItem(
 	val baseInt: Int? = null,
 
 	@field:SerializedName("int_gain")
-	val intGain: Any? = null,
+	val intGain: Float? = null,
 
 	@field:SerializedName("move_speed")
 	val moveSpeed: Int? = null,
 
 	@field:SerializedName("turn_rate")
-	val turnRate: Any? = null,
+	val turnRate: Float? = null,
 
 	@field:SerializedName("base_attack_min")
 	val baseAttackMin: Int? = null,
@@ -98,7 +95,7 @@ data class HeroResponseItem(
 	val baseAgi: Int? = null,
 
 	@field:SerializedName("base_health_regen")
-	val baseHealthRegen: Any? = null,
+	val baseHealthRegen: Float? = null,
 
 	@field:SerializedName("base_mr")
 	val baseMr: Int? = null

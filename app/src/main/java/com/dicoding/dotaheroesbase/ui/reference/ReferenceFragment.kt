@@ -29,7 +29,6 @@ class ReferenceFragment : Fragment() {
         _binding = FragmentReferenceBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        (activity as AppCompatActivity).supportActionBar?.hide()
 
         return root
     }
