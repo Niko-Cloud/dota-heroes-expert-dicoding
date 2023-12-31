@@ -23,7 +23,6 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val homeViewModel: HomeViewModel by viewModels()
     private val binding get() = _binding!!
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -55,6 +54,30 @@ class HomeFragment : Fragment() {
                     when (hero) {
                         is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
                         is Resource.Success -> {
+
+                            with(binding) {
+                                searchView.setupWithSearchBar(this.searchBar)
+                                searchView
+                                    .editText
+                                    .setOnEditorActionListener { _, _, _ ->
+                                        val searchText = searchView.text.toString()
+                                        searchBar.setText(searchText)
+                                        searchView.hide()
+                                        val filteredList = hero.data?.filter { it.localizedName?.contains(searchText, true)
+                                            ?: true }
+                                        if (filteredList != null) {
+                                            if (filteredList.isEmpty()){
+                                                viewError.root.visibility = View.VISIBLE
+                                                viewError.tvError.text = getString(R.string.no_data_found)
+                                            } else {
+                                                viewError.root.visibility = View.GONE
+                                            }
+                                        }
+                                        heroAdapter.setData(filteredList)
+                                        true
+                                    }
+                            }
+
                             binding.progressBar.visibility = View.GONE
                             heroAdapter.setData(hero.data)
                         }

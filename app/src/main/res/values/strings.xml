@@ -35,4 +35,6 @@
     <string name="bookmark_hero">Bookmark Hero</string>
     <string name="no_list_yet">No List Yet</string>
     <string name="open_dota_api">Open Dota API</string>
+    <string name="search_your_dota_hero">Search Your Dota Hero</string>
+    <string name="no_data_found">No data found</string>
 </resources>
