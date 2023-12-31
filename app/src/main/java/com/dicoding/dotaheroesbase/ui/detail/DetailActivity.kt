@@ -8,6 +8,7 @@ import com.bumptech.glide.Glide
 import com.dicoding.dotaheroesbase.R
 import com.dicoding.dotaheroesbase.core.domain.model.Hero
 import com.dicoding.dotaheroesbase.databinding.ActivityDetailBinding
+import com.google.android.material.chip.Chip
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -29,6 +30,12 @@ class DetailActivity : AppCompatActivity() {
         val data = intent.getParcelableExtra<Hero>(EXTRA_DATA)
         if (data != null) {
             showDetail(data)
+        }
+
+        for (tag in data?.roles!!) {
+            val chip = Chip(this@DetailActivity)
+            chip.text = tag
+            binding.chipGroup.addView(chip)
         }
 
         binding.ivBack.setOnClickListener {
