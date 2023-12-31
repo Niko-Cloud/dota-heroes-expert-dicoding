@@ -41,7 +41,7 @@ class HeroAdapter : RecyclerView.Adapter<HeroAdapter.ListViewHolder>() {
             with(binding) {
                 tvItem.text = data.localizedName
                 Glide.with(itemView.context)
-                    .load(data.img)
+                    .load("https://api.opendota.com${data.img}")
                     .into(ivItem)
             }
         }

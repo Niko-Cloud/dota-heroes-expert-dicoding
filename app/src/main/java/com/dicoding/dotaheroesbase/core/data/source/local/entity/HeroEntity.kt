@@ -69,13 +69,13 @@ data class HeroEntity(
     val localizedName: String? = null,
 
     @ColumnInfo("base_armor")
-    val baseArmor: Int? = null,
+    val baseArmor: Float? = null,
 
     @ColumnInfo("base_mana_regen")
-    val baseManaRegen: Int? = null,
+    val baseManaRegen: Float? = null,
 
     @ColumnInfo("base_attack_max")
-    val baseAttackMax: Int? = null,
+    val baseAttackMax: Float? = null,
 
     @ColumnInfo("base_int")
     val baseInt: Int? = null,
@@ -90,10 +90,10 @@ data class HeroEntity(
     val turnRate: Float? = null,
 
     @ColumnInfo("base_attack_min")
-    val baseAttackMin: Int? = null,
+    val baseAttackMin: Float? = null,
 
     @ColumnInfo("base_attack_time")
-    val baseAttackTime: Int? = null,
+    val baseAttackTime: Float? = null,
 
     @ColumnInfo("base_agi")
     val baseAgi: Int? = null,
@@ -102,5 +102,5 @@ data class HeroEntity(
     val baseHealthRegen: Float? = null,
 
     @ColumnInfo("base_mr")
-    val baseMr: Int? = null
+    val baseMr: Float? = null
 )

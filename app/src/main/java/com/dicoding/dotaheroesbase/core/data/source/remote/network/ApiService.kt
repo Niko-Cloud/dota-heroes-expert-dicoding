@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface ApiService {
     @GET("heroStats")
-    suspend fun getHeroes(): HeroResponseItem
+    suspend fun getHeroes(): List<HeroResponseItem>
 }

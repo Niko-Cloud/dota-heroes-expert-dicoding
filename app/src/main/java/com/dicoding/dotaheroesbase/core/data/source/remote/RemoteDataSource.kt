@@ -16,7 +16,7 @@ class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
         return flow {
             try {
                 val dataArray = apiService.getHeroes()
-                emit(listOf(dataArray))
+                emit(dataArray)
             } catch (e: Exception) {
                 emit(emptyList())
                 Log.e("RemoteDataSource", e.toString())

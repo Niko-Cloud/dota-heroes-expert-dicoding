@@ -27,16 +27,16 @@ data class Hero(
     val icon: String?,
     val baseMana: Int?,
     val localizedName: String?,
-    val baseArmor: Int?,
-    val baseManaRegen: Int?,
-    val baseAttackMax: Int?,
+    val baseArmor: Float?,
+    val baseManaRegen: Float?,
+    val baseAttackMax: Float?,
     val baseInt: Int?,
     val intGain: Float?,
     val moveSpeed: Int?,
     val turnRate: Float?,
-    val baseAttackMin: Int?,
-    val baseAttackTime: Int?,
+    val baseAttackMin: Float?,
+    val baseAttackTime: Float?,
     val baseAgi: Int?,
     val baseHealthRegen: Float?,
-    val baseMr: Int?
+    val baseMr: Float?
 ): Parcelable

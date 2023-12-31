@@ -65,13 +65,13 @@ data class HeroResponseItem(
 	val localizedName: String? = null,
 
 	@field:SerializedName("base_armor")
-	val baseArmor: Int? = null,
+	val baseArmor: Float? = null,
 
 	@field:SerializedName("base_mana_regen")
-	val baseManaRegen: Int? = null,
+	val baseManaRegen: Float? = null,
 
 	@field:SerializedName("base_attack_max")
-	val baseAttackMax: Int? = null,
+	val baseAttackMax: Float? = null,
 
 	@field:SerializedName("base_int")
 	val baseInt: Int? = null,
@@ -86,10 +86,10 @@ data class HeroResponseItem(
 	val turnRate: Float? = null,
 
 	@field:SerializedName("base_attack_min")
-	val baseAttackMin: Int? = null,
+	val baseAttackMin: Float? = null,
 
 	@field:SerializedName("base_attack_time")
-	val baseAttackTime: Int? = null,
+	val baseAttackTime: Float? = null,
 
 	@field:SerializedName("base_agi")
 	val baseAgi: Int? = null,
@@ -98,5 +98,5 @@ data class HeroResponseItem(
 	val baseHealthRegen: Float? = null,
 
 	@field:SerializedName("base_mr")
-	val baseMr: Int? = null
+	val baseMr: Float? = null
 )
