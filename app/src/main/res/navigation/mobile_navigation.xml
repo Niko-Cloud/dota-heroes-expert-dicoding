@@ -14,12 +14,12 @@
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.dicoding.dotaheroesbase.ui.bookmark.BookmarkFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/title_bookmark"
         tools:layout="@layout/fragment_bookmark" />
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.dicoding.dotaheroesbase.ui.reference.ReferenceFragment"
-        android:label="@string/title_notifications"
+        android:label="@string/title_important"
         tools:layout="@layout/fragment_reference" />
 </navigation>

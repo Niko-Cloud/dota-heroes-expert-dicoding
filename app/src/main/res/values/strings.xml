@@ -1,8 +1,35 @@
 <resources>
     <string name="app_name">Dota Heroes Base</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_bookmark">Bookmark</string>
+    <string name="title_important">Important</string>
     <string name="something_wrong">Something Wrong Happened</string>
     <string name="dota_heroes_list">Dota Heroes List</string>
+    <string name="back_button">back button</string>
+    <string name="bookmark_button">bookmark button</string>
+    <string name="tools_image">hero image</string>
+    <string name="day_vision">Day Vision = %s</string>
+    <string name="night_vision">Night Vision = %s</string>
+    <string name="primary_attribute">Primary Attribute = %s</string>
+    <string name="move_speed">Move Speed = %s</string>
+    <string name="attack_range">Attack Range = %s</string>
+    <string name="base_attack_max">Base Attack Max = %s</string>
+    <string name="attack_type">Attack Type = %s</string>
+    <string name="base_attack_min">Base Attack Min = %s</string>
+    <string name="attack_rate">Attack Rate = %s</string>
+    <string name="base_attack_time">Base Attack Time = %s</string>
+    <string name="attack_point">Attack Point = %s</string>
+    <string name="projectile_speed">Projectile Speed = %s</string>
+    <string name="base_health">Base Health = %s</string>
+    <string name="base_mana">Base Mana = %s</string>
+    <string name="base_hp_regen">Base Hp Regen = %s</string>
+    <string name="base_mana_regen">Base Mana Regen = %s</string>
+    <string name="base_armor">Base Armor = %s</string>
+    <string name="base_magic_res">Base Magic Res = %s</string>
+    <string name="base_str">Base STR = %s</string>
+    <string name="str_gain">STR Gain = %s</string>
+    <string name="base_int">Base INT = %s</string>
+    <string name="int_gain">INT Gain = %s</string>
+    <string name="base_agi">Base AGI = %s</string>
+    <string name="agi_gain">AGI Gain = %s</string>
 </resources>

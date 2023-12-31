@@ -1,6 +1,8 @@
 package com.dicoding.dotaheroesbase.ui.home
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +14,7 @@ import com.dicoding.dotaheroesbase.R
 import com.dicoding.dotaheroesbase.core.data.Resource
 import com.dicoding.dotaheroesbase.core.ui.HeroAdapter
 import com.dicoding.dotaheroesbase.databinding.FragmentHomeBinding
+import com.dicoding.dotaheroesbase.ui.detail.DetailActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -40,11 +43,12 @@ class HomeFragment : Fragment() {
         if (activity != null) {
 
             val heroAdapter = HeroAdapter()
-//            heroAdapter.onItemClick = { selectedData ->
-//                val intent = Intent(activity, DetailActivity::class.java)
-//                intent.putExtra(DetailActivity.EXTRA_DATA, selectedData)
-//                startActivity(intent)
-//            }
+            heroAdapter.onItemClick = { selectedData ->
+                val intent = Intent(activity, DetailActivity::class.java)
+                intent.putExtra(DetailActivity.EXTRA_DATA, selectedData)
+                Log.d("HomeFragment", "selectedData: $selectedData")
+                startActivity(intent)
+            }
 
             homeViewModel.hero.observe(viewLifecycleOwner) { hero ->
                 if (hero != null) {
@@ -66,7 +70,7 @@ class HomeFragment : Fragment() {
             }
 
             with(binding.rvHero) {
-                layoutManager = GridLayoutManager(context,2)
+                layoutManager = GridLayoutManager(context, 2)
                 setHasFixedSize(true)
                 adapter = heroAdapter
             }

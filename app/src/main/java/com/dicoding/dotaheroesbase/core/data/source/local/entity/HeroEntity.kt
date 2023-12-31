@@ -86,9 +86,6 @@ data class HeroEntity(
     @ColumnInfo("move_speed")
     val moveSpeed: Int? = null,
 
-    @ColumnInfo("turn_rate")
-    val turnRate: Float? = null,
-
     @ColumnInfo("base_attack_min")
     val baseAttackMin: Float? = null,
 

@@ -22,7 +22,6 @@ data class Hero(
     val projectileSpeed: Int?,
     val dayVision: Int?,
     val img: String?,
-    @TypeConverters(TypeConverter::class)
     val roles: List<String?>?,
     val icon: String?,
     val baseMana: Int?,
@@ -33,7 +32,6 @@ data class Hero(
     val baseInt: Int?,
     val intGain: Float?,
     val moveSpeed: Int?,
-    val turnRate: Float?,
     val baseAttackMin: Float?,
     val baseAttackTime: Float?,
     val baseAgi: Int?,

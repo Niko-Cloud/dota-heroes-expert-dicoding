@@ -82,9 +82,6 @@ data class HeroResponseItem(
 	@field:SerializedName("move_speed")
 	val moveSpeed: Int? = null,
 
-	@field:SerializedName("turn_rate")
-	val turnRate: Float? = null,
-
 	@field:SerializedName("base_attack_min")
 	val baseAttackMin: Float? = null,
 

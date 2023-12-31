@@ -69,7 +69,6 @@ dependencies {
     //Dagger-Hilt
     implementation("com.google.dagger:hilt-android:2.50")
     ksp("com.google.dagger:hilt-android-compiler:2.50")
-    ksp("androidx.hilt:hilt-compiler:1.1.0")
 
     //Room
     val room_version = "2.6.1"
