@@ -1,8 +1,6 @@
 package com.dicoding.dotaheroesbase.core.domain.model
 
 import android.os.Parcelable
-import androidx.room.TypeConverters
-import com.dicoding.dotaheroesbase.core.utils.TypeConverter
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
@@ -37,4 +35,4 @@ data class Hero(
     val baseAgi: Int?,
     val baseHealthRegen: Float?,
     val baseMr: Float?
-): Parcelable
+) : Parcelable

@@ -16,11 +16,11 @@ import javax.inject.Singleton
 class DatabaseModule {
     @Singleton
     @Provides
-    fun provideDatabase(@ApplicationContext context: Context):HeroDatabase = Room.databaseBuilder(
+    fun provideDatabase(@ApplicationContext context: Context): HeroDatabase = Room.databaseBuilder(
         context,
         HeroDatabase::class.java, "Hero.db"
     ).fallbackToDestructiveMigration().build()
 
     @Provides
-    fun provideHeroDao(database: HeroDatabase):HeroDao = database.heroDao()
+    fun provideHeroDao(database: HeroDatabase): HeroDao = database.heroDao()
 }

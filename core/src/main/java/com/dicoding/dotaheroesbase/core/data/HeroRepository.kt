@@ -17,7 +17,7 @@ class HeroRepository @Inject constructor(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource,
     private val appExecutors: AppExecutors
-): IHeroRepository {
+) : IHeroRepository {
     override fun getAllHeroes(): Flow<Resource<List<Hero>>> =
         object : NetworkBoundResource<List<Hero>, List<HeroResponseItem>>() {
             override fun loadFromDB(): Flow<List<Hero>> {

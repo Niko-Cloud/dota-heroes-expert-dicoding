@@ -5,9 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.dicoding.dotaheroesbase.R
+import com.dicoding.dotaheroesbase.core.R
 import com.dicoding.dotaheroesbase.core.domain.model.Hero
-import com.dicoding.dotaheroesbase.databinding.HeroItemBinding
+import com.dicoding.dotaheroesbase.core.databinding.HeroItemBinding
 
 class HeroAdapter : RecyclerView.Adapter<HeroAdapter.ListViewHolder>() {
     private var listData = ArrayList<Hero>()

@@ -8,6 +8,6 @@ import com.dicoding.dotaheroesbase.core.utils.TypeConverter
 
 @Database(entities = [HeroEntity::class], version = 3, exportSchema = false)
 @TypeConverters(TypeConverter::class)
-abstract class HeroDatabase:RoomDatabase() {
+abstract class HeroDatabase : RoomDatabase() {
     abstract fun heroDao(): HeroDao
 }

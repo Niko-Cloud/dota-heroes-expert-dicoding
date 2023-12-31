@@ -7,14 +7,14 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class LocalDataSource @Inject constructor(private val heroDao: HeroDao){
+class LocalDataSource @Inject constructor(private val heroDao: HeroDao) {
     fun getAllHero(): Flow<List<HeroEntity>> = heroDao.getAllHero()
 
     fun getBookmarkHero(): Flow<List<HeroEntity>> = heroDao.getBookmarkHero()
 
     suspend fun insertHero(heroList: List<HeroEntity>) = heroDao.insertHero(heroList)
 
-    fun setBookmarkHero(hero: HeroEntity, newState: Boolean){
+    fun setBookmarkHero(hero: HeroEntity, newState: Boolean) {
         hero.isBookmark = newState
         heroDao.updateBookmarkHero(hero)
     }

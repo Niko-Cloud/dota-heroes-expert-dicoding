@@ -63,12 +63,15 @@ class HomeFragment : Fragment() {
                                         val searchText = searchView.text.toString()
                                         searchBar.setText(searchText)
                                         searchView.hide()
-                                        val filteredList = hero.data?.filter { it.localizedName?.contains(searchText, true)
-                                            ?: true }
+                                        val filteredList = hero.data?.filter {
+                                            it.localizedName?.contains(searchText, true)
+                                                ?: true
+                                        }
                                         if (filteredList != null) {
-                                            if (filteredList.isEmpty()){
+                                            if (filteredList.isEmpty()) {
                                                 viewError.root.visibility = View.VISIBLE
-                                                viewError.tvError.text = getString(R.string.no_data_found)
+                                                viewError.tvError.text =
+                                                    getString(R.string.no_data_found)
                                             } else {
                                                 viewError.root.visibility = View.GONE
                                             }

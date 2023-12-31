@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Dota Heroes Base"
 include(":app")
- 
+include(":core")

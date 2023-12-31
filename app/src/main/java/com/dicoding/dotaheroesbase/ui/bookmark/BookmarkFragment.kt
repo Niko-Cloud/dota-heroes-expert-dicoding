@@ -5,11 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.dicoding.dotaheroesbase.R
 import com.dicoding.dotaheroesbase.core.ui.HeroAdapter
@@ -60,7 +58,7 @@ class BookmarkFragment : Fragment() {
                         val filteredList = data.filter {
                             it.localizedName?.contains(searchText, true) ?: true
                         }
-                        if (filteredList.isEmpty()){
+                        if (filteredList.isEmpty()) {
                             viewError.root.visibility = View.VISIBLE
                             viewError.tvError.text = getString(R.string.no_data_found)
                         } else {
@@ -77,7 +75,7 @@ class BookmarkFragment : Fragment() {
             }
 
             with(binding.rvHero) {
-                layoutManager = GridLayoutManager(context,2)
+                layoutManager = GridLayoutManager(context, 2)
                 setHasFixedSize(true)
                 adapter = heroAdapter
             }
