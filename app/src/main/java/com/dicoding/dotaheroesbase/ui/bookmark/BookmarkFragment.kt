@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import com.dicoding.dotaheroesbase.R
 import com.dicoding.dotaheroesbase.core.ui.HeroAdapter
 import com.dicoding.dotaheroesbase.databinding.FragmentBookmarkBinding
 import com.dicoding.dotaheroesbase.ui.detail.DetailActivity
@@ -48,6 +49,29 @@ class BookmarkFragment : Fragment() {
 
             viewModel.bookmark.observe(viewLifecycleOwner) { data ->
                 heroAdapter.setData(data)
+
+                with(binding) {
+                    searchView.setupWithSearchBar(searchBar)
+                    searchView.editText.setOnEditorActionListener { _, _, _ ->
+                        val searchText = searchView.text.toString()
+                        searchBar.setText(searchText)
+                        searchView.hide()
+
+                        val filteredList = data.filter {
+                            it.localizedName?.contains(searchText, true) ?: true
+                        }
+                        if (filteredList.isEmpty()){
+                            viewError.root.visibility = View.VISIBLE
+                            viewError.tvError.text = getString(R.string.no_data_found)
+                        } else {
+                            viewError.root.visibility = View.GONE
+                        }
+                        heroAdapter.setData(filteredList)
+
+                        true
+                    }
+                }
+
                 binding.viewError.root.visibility =
                     if (data.isNotEmpty()) View.GONE else View.VISIBLE
             }

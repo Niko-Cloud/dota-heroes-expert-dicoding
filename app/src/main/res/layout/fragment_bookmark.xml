@@ -4,21 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/SearchBar.Theme.DotaHeroesBase"
     tools:context=".ui.bookmark.BookmarkFragment">
 
-    <TextView
-        android:id="@+id/textView"
+    <com.google.android.material.search.SearchBar
+        android:id="@+id/searchBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:text="@string/bookmark_hero"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:layout_marginHorizontal="16dp"
+        android:backgroundTint="@android:color/transparent"
+        android:hint="@string/search_your_dota_hero"
         app:layout_constraintBottom_toTopOf="@+id/rv_hero"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIconTint="?attr/colorPrimary"
+        app:strokeColor="?attr/colorPrimary"
+        app:strokeWidth="1dp"
+        app:subtitleTextColor="?attr/colorPrimary" />
+
+    <com.google.android.material.search.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.google.android.material.search.SearchView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_hero"
@@ -26,11 +40,12 @@
         android:layout_height="0dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
-        android:paddingBottom="45dp"
+        android:layout_marginTop="8dp"
+        android:paddingBottom="90dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/searchBar"
         app:spanCount="2" />
 
     <ProgressBar
