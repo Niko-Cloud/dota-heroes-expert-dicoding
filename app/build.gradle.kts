@@ -70,6 +70,9 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.50")
     ksp("com.google.dagger:hilt-android-compiler:2.50")
 
+    //Circle Image
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+
     //Room
     val room_version = "2.6.1"
     implementation("androidx.room:room-runtime:$room_version")

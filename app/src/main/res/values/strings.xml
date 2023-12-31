@@ -32,4 +32,7 @@
     <string name="int_gain">INT Gain = %s</string>
     <string name="base_agi">Base AGI = %s</string>
     <string name="agi_gain">AGI Gain = %s</string>
+    <string name="bookmark_hero">Bookmark Hero</string>
+    <string name="no_list_yet">No List Yet</string>
+    <string name="open_dota_api">Open Dota API</string>
 </resources>

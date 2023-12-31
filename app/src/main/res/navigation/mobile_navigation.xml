@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.dicoding.dotaheroesbase.ui.reference.ReferenceFragment"
+        android:name="com.dicoding.dotaheroesbase.ui.important.ImportantFragment"
         android:label="@string/title_important"
-        tools:layout="@layout/fragment_reference" />
+        tools:layout="@layout/fragment_important" />
 </navigation>
