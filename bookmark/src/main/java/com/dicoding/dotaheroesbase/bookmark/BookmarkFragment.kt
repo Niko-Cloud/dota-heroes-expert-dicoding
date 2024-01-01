@@ -1,4 +1,4 @@
-package com.dicoding.dotaheroesbase.ui.bookmark
+package com.dicoding.dotaheroesbase.bookmark
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,15 +12,21 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.dicoding.dotaheroesbase.R
 import com.dicoding.dotaheroesbase.core.ui.HeroAdapter
 import com.dicoding.dotaheroesbase.databinding.FragmentBookmarkBinding
+import com.dicoding.dotaheroesbase.di.BookmarkModuleDependencies
 import com.dicoding.dotaheroesbase.ui.detail.DetailActivity
-import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.EntryPointAccessors
+import javax.inject.Inject
 
-@AndroidEntryPoint
 class BookmarkFragment : Fragment() {
 
+    @Inject
+    lateinit var factory: ViewModelFactory
+    private val viewModel: BookmarkViewModel by viewModels{
+        factory
+    }
     private var _binding: FragmentBookmarkBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: BookmarkViewModel by viewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,6 +40,16 @@ class BookmarkFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        DaggerBookmarkComponent.builder()
+            .context(requireContext())
+            .appDependencies(
+                EntryPointAccessors.fromApplication(
+                    requireContext(),
+                    BookmarkModuleDependencies::class.java
+                )
+            )
+            .build()
+            .inject(this)
         super.onViewCreated(view, savedInstanceState)
 
         if (activity != null) {

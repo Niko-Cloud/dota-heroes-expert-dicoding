@@ -1,22 +1,16 @@
 plugins {
-    id("com.android.application")
+    id("com.android.dynamic-feature")
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
     id("kotlin-parcelize")
     id("com.google.dagger.hilt.android")
 }
-
 android {
-    namespace = "com.dicoding.dotaheroesbase"
+    namespace = "com.dicoding.dotaheroesbase.bookmark"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.dicoding.dotaheroesbase"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -39,18 +33,10 @@ android {
     buildFeatures {
         viewBinding = true
     }
-    dynamicFeatures += setOf(":bookmark")
 }
 
 dependencies {
+    implementation(project(":app"))
     implementation(project(":core"))
-    //Circle Image
-    implementation("de.hdodenhof:circleimageview:3.1.0")
     apply(from = "../shared-dependencies.gradle")
-
-    //navigation
-    val nav_version = "2.7.6"
-    api("androidx.navigation:navigation-fragment-ktx:$nav_version")
-    api("androidx.navigation:navigation-ui-ktx:$nav_version")
-    api("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
 }
