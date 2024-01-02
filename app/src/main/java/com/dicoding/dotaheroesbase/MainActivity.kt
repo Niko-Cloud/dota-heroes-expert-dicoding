@@ -30,7 +30,9 @@ class MainActivity : AppCompatActivity() {
         navController.setGraph(R.navigation.mobile_navigation)
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_bookmark, R.id.navigation_important
+                R.id.navigation_home,
+                R.id.navigation_bookmark,
+                R.id.navigation_important
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

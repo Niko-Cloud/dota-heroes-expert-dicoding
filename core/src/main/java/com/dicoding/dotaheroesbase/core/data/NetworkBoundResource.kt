@@ -5,6 +5,7 @@ import kotlinx.coroutines.flow.emitAll
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
+import java.io.IOException
 
 abstract class NetworkBoundResource<ResultType, RequestType> {
 
@@ -19,7 +20,7 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
                 val response = createCall().first()
                 saveCallResult(response)
                 emitAll(loadFromDB().map { Resource.Success(it) })
-            } catch (e: Exception) {
+            } catch (e: IOException) {
                 onFetchFailed()
                 emit(Resource.Error(e.message ?: "Unknown error"))
             }

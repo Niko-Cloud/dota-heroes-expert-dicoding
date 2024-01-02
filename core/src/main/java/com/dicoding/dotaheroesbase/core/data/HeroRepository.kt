@@ -48,5 +48,4 @@ class HeroRepository @Inject constructor(
         val heroEntity = DataMapper.mapDomainToEntity(hero)
         appExecutors.diskIO().execute { localDataSource.setBookmarkHero(heroEntity, state) }
     }
-
 }

@@ -18,7 +18,8 @@ class DatabaseModule {
     @Provides
     fun provideDatabase(@ApplicationContext context: Context): HeroDatabase = Room.databaseBuilder(
         context,
-        HeroDatabase::class.java, "Hero.db"
+        HeroDatabase::class.java,
+        "Hero.db"
     ).fallbackToDestructiveMigration().build()
 
     @Provides

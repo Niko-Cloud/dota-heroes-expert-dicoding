@@ -13,5 +13,4 @@ class HeroInteractor @Inject constructor(private val heroRepository: IHeroReposi
     override fun setBookmarkHero(hero: Hero, state: Boolean) {
         return heroRepository.setBookmarkHero(hero, state)
     }
-
 }

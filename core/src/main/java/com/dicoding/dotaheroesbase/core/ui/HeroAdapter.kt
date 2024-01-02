@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.dotaheroesbase.core.R
-import com.dicoding.dotaheroesbase.core.domain.model.Hero
 import com.dicoding.dotaheroesbase.core.databinding.HeroItemBinding
+import com.dicoding.dotaheroesbase.core.domain.model.Hero
 
 class HeroAdapter : RecyclerView.Adapter<HeroAdapter.ListViewHolder>() {
     private var listData = ArrayList<Hero>()
@@ -19,7 +19,6 @@ class HeroAdapter : RecyclerView.Adapter<HeroAdapter.ListViewHolder>() {
         listData.addAll(newListData)
         notifyDataSetChanged()
     }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeroAdapter.ListViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.hero_item, parent, false)
@@ -50,7 +49,6 @@ class HeroAdapter : RecyclerView.Adapter<HeroAdapter.ListViewHolder>() {
             binding.root.setOnClickListener {
                 onItemClick?.invoke(listData[adapterPosition])
             }
-
         }
     }
 }

@@ -14,6 +14,6 @@ class ViewModelFactory @Inject constructor(private val heroUseCase: HeroUseCase)
             modelClass.isAssignableFrom(BookmarkViewModel::class.java) -> {
                 BookmarkViewModel(heroUseCase) as T
             }
-            else -> throw Throwable("Unknown ViewModel class: " + modelClass.name)
+            else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
 }

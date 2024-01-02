@@ -33,14 +33,12 @@ class HomeFragment : Fragment() {
         (activity as AppCompatActivity).supportActionBar?.hide()
 
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         if (activity != null) {
-
             val heroAdapter = HeroAdapter()
             heroAdapter.onItemClick = { selectedData ->
                 val intent = Intent(activity, DetailActivity::class.java)
@@ -54,7 +52,6 @@ class HomeFragment : Fragment() {
                     when (hero) {
                         is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
                         is Resource.Success -> {
-
                             with(binding) {
                                 searchView.setupWithSearchBar(this.searchBar)
                                 searchView
@@ -102,7 +99,6 @@ class HomeFragment : Fragment() {
             }
         }
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

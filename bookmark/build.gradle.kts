@@ -4,6 +4,7 @@ plugins {
     id("com.google.devtools.ksp")
     id("kotlin-parcelize")
     id("com.google.dagger.hilt.android")
+    id("io.gitlab.arturbosch.detekt")
 }
 android {
     namespace = "com.dicoding.dotaheroesbase.bookmark"

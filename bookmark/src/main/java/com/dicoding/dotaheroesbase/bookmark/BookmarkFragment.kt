@@ -21,12 +21,11 @@ class BookmarkFragment : Fragment() {
 
     @Inject
     lateinit var factory: ViewModelFactory
-    private val viewModel: BookmarkViewModel by viewModels{
+    private val viewModel: BookmarkViewModel by viewModels {
         factory
     }
     private var _binding: FragmentBookmarkBinding? = null
     private val binding get() = _binding!!
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -53,7 +52,6 @@ class BookmarkFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         if (activity != null) {
-
             val heroAdapter = HeroAdapter()
             heroAdapter.onItemClick = { selectedData ->
                 val intent = Intent(activity, DetailActivity::class.java)

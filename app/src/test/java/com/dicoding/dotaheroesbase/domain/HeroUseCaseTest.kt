@@ -30,7 +30,7 @@ class HeroUseCaseTest {
 
     @Test
     fun `should have getting all heroes`() = runBlocking {
-        val flowHeroes = flow { emit(Resource.Success(listOf(mockHero) )) }
+        val flowHeroes = flow { emit(Resource.Success(listOf(mockHero))) }
 
         `when`(mockHeroUseCase.getAllHeroes()).thenReturn(flowHeroes)
 

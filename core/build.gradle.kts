@@ -4,6 +4,7 @@ plugins {
     id("com.google.devtools.ksp")
     id("kotlin-parcelize")
     id("com.google.dagger.hilt.android")
+    id("io.gitlab.arturbosch.detekt")
 }
 
 android {
@@ -55,6 +56,4 @@ dependencies {
     implementation("androidx.room:room-ktx:$roomVersion")
 
     apply(from = "../shared-dependencies.gradle")
-
-
 }
