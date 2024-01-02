@@ -33,7 +33,7 @@ jobs:
           name: Run Tests
           command: ./gradlew lint test
       - run:
-          name: Check Code Style
+          name: Run Check Code Style
           command: ./gradlew detekt lint
       - store_test_results:
           path: app/build/test-results
