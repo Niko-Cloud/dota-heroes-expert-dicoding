@@ -6,4 +6,5 @@ plugins {
     id("com.google.dagger.hilt.android") version "2.50" apply false
     id("com.android.library") version "8.2.0" apply false
     id("com.android.dynamic-feature") version "8.2.0" apply false
+    id("io.gitlab.arturbosch.detekt") version "1.23.4" apply false
 }
