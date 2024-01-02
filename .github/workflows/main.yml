@@ -1,0 +1,44 @@
+name: Android Expert
+run-name: ${{ github.actor }} is testing out Android Expert
+on:
+  push:
+    branches:
+      - main 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+
+      - name: Download Dependencies and Build
+        run: |
+          chmod +x ./gradlew
+          ./gradlew androidDependencies build
+
+      - name: Cache Gradle Dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Run Tests and Code Style Checks
+        run: |
+          ./gradlew lint test detekt
+
+      - name: Store Test Results
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-results
+          path: app/build/test-results
+
+      - name: Store APK Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: debug-apk
+          path: app/build/outputs/apk/debug/
