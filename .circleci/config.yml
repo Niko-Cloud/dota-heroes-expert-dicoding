@@ -11,9 +11,14 @@ jobs:
           JVM_OPTS: -Xmx3200m
           JAVA_HOME: /usr/lib/jvm/zulu-17-amd64
     executor: android/android
-    
+
     steps:
       - checkout
+      - run:
+          name: Update Java version
+          command: |
+            sudo update-alternatives --set java /usr/lib/jvm/zulu-17-amd64/bin/java
+            sudo update-alternatives --set javac /usr/lib/jvm/zulu-17-amd64/bin/javac
       - run:
           name: Run Code Coverage
           command: ./gradlew jacocoTestReport
