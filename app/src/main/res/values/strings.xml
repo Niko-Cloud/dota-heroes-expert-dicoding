@@ -4,7 +4,6 @@
     <string name="title_bookmark">Bookmark</string>
     <string name="title_important">Important</string>
     <string name="something_wrong">Something Wrong Happened</string>
-    <string name="dota_heroes_list">Dota Heroes List</string>
     <string name="back_button">back button</string>
     <string name="bookmark_button">bookmark button</string>
     <string name="tools_image">hero image</string>
@@ -32,9 +31,9 @@
     <string name="int_gain">INT Gain = %s</string>
     <string name="base_agi">Base AGI = %s</string>
     <string name="agi_gain">AGI Gain = %s</string>
-    <string name="bookmark_hero">Bookmark Hero</string>
-    <string name="no_list_yet">No List Yet</string>
+    <string name="no_list_yet">No Data Found</string>
     <string name="open_dota_api">Open Dota API</string>
     <string name="search_your_dota_hero">Search Your Dota Hero</string>
     <string name="no_data_found">No data found</string>
+    <string name="hero_icon">hero icon</string>
 </resources>

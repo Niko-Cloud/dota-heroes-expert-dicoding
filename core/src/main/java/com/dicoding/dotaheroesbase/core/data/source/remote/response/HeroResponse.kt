@@ -1,13 +1,6 @@
 package com.dicoding.dotaheroesbase.core.data.source.remote.response
 
 import com.google.gson.annotations.SerializedName
-
-data class HeroResponse(
-
-    @field:SerializedName("HeroResponse")
-    val heroResponse: List<HeroResponseItem?>? = null
-)
-
 data class HeroResponseItem(
 
     @field:SerializedName("primary_attr")

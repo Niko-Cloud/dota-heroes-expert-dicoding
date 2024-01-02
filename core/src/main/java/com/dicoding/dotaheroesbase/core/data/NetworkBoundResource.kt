@@ -21,7 +21,7 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
                 emitAll(loadFromDB().map { Resource.Success(it) })
             } catch (e: Exception) {
                 onFetchFailed()
-                emit(Resource.Error<ResultType>(e.message ?: "Unknown error"))
+                emit(Resource.Error(e.message ?: "Unknown error"))
             }
         } else {
             emitAll(loadFromDB().map { Resource.Success(it) })

@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.dicoding.dotaheroesbase.R
+import com.dicoding.dotaheroesbase.bookmark.databinding.FragmentBookmarkBinding
 import com.dicoding.dotaheroesbase.core.ui.HeroAdapter
-import com.dicoding.dotaheroesbase.databinding.FragmentBookmarkBinding
 import com.dicoding.dotaheroesbase.di.BookmarkModuleDependencies
 import com.dicoding.dotaheroesbase.ui.detail.DetailActivity
 import dagger.hilt.android.EntryPointAccessors
@@ -75,10 +75,10 @@ class BookmarkFragment : Fragment() {
                             it.localizedName?.contains(searchText, true) ?: true
                         }
                         if (filteredList.isEmpty()) {
-                            viewError.root.visibility = View.VISIBLE
-                            viewError.tvError.text = getString(R.string.no_data_found)
+                            viewError.visibility = View.VISIBLE
+                            viewError.text = getString(R.string.no_data_found)
                         } else {
-                            viewError.root.visibility = View.GONE
+                            viewError.visibility = View.GONE
                         }
                         heroAdapter.setData(filteredList)
 
@@ -86,7 +86,7 @@ class BookmarkFragment : Fragment() {
                     }
                 }
 
-                binding.viewError.root.visibility =
+                binding.viewError.visibility =
                     if (data.isNotEmpty()) View.GONE else View.VISIBLE
             }
 

@@ -49,8 +49,8 @@ dependencies {
     apply(from = "../shared-dependencies.gradle")
 
     //navigation
-    val nav_version = "2.7.6"
-    api("androidx.navigation:navigation-fragment-ktx:$nav_version")
-    api("androidx.navigation:navigation-ui-ktx:$nav_version")
-    api("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
+    val navVersion = "2.7.6"
+    api("androidx.navigation:navigation-fragment-ktx:$navVersion")
+    api("androidx.navigation:navigation-ui-ktx:$navVersion")
+    api("androidx.navigation:navigation-dynamic-features-fragment:$navVersion")
 }
