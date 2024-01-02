@@ -16,6 +16,9 @@ jobs:
           name: Chmod permissions
           command: sudo chmod +x ./gradlew
       - run:
+          name: Check Code Style
+          command: ./gradlew detekt lint
+      - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
       - save_cache:
