@@ -16,9 +16,6 @@ jobs:
           name: Chmod permissions
           command: sudo chmod +x ./gradlew
       - run:
-          name: Run Code Coverage
-          command: ./gradlew jacocoTestReport
-      - run:
           name: Check Code Style
           command: ./gradlew detekt ktlint
       - run:
