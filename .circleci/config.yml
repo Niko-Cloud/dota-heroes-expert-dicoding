@@ -5,9 +5,26 @@ orbs:
  
 jobs:
   build:
+    docker:
+      - image: circleci/android:api-30-node
+        environment:
+          JVM_OPTS: -Xmx3200m
+          JAVA_HOME: /usr/lib/jvm/zulu-17-amd64
     executor: android/android
     steps:
       - checkout
+      - run:
+          name: Run Code Coverage
+          command: ./gradlew jacocoTestReport
+
+      - run:
+          name: Check Code Style
+          command: ./gradlew detekt ktlint
+
+      - run:
+          name: Check Vulnerabilities
+          command: |
+            # Run vulnerability check command here
       - restore_cache:
           key: android-orb-v1-
       - run:
