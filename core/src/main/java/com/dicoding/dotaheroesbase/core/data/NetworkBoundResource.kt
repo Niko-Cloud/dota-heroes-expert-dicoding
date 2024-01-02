@@ -21,15 +21,12 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
                 saveCallResult(response)
                 emitAll(loadFromDB().map { Resource.Success(it) })
             } catch (e: IOException) {
-                onFetchFailed()
                 emit(Resource.Error(e.message ?: "Unknown error"))
             }
         } else {
             emitAll(loadFromDB().map { Resource.Success(it) })
         }
     }
-
-    protected open fun onFetchFailed() {}
 
     protected abstract fun loadFromDB(): Flow<ResultType>
 

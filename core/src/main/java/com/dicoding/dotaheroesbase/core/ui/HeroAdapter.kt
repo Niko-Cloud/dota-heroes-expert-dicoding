@@ -1,5 +1,6 @@
 package com.dicoding.dotaheroesbase.core.ui
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +14,7 @@ class HeroAdapter : RecyclerView.Adapter<HeroAdapter.ListViewHolder>() {
     private var listData = ArrayList<Hero>()
     var onItemClick: ((Hero) -> Unit)? = null
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setData(newListData: List<Hero>?) {
         if (newListData == null) return
         listData.clear()
