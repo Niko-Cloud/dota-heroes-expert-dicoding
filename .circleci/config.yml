@@ -14,10 +14,7 @@ jobs:
           key: android-orb-v1-
       - run:
           name: Chmod permissions
-          command: sudo chmod +x ./gradlew
-      - run:
-          name: Check Code Style
-          command: ./gradlew detekt lint
+          command: sudo chmod +x ./gradlew=
       - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
@@ -35,6 +32,9 @@ jobs:
       - run:
           name: Run Tests
           command: ./gradlew lint test
+      - run:
+          name: Check Code Style
+          command: ./gradlew detekt lint
       - store_test_results:
           path: app/build/test-results
       - store_artifacts:  
