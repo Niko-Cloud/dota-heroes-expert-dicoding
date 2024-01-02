@@ -34,7 +34,7 @@ jobs:
           command: ./gradlew lint test
       - run:
           name: Run Check Code Style
-          command: ./gradlew detekt lint
+          command: ./gradlew detekt
       - store_test_results:
           path: app/build/test-results
       - store_artifacts:  
