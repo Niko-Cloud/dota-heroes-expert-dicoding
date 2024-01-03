@@ -20,8 +20,22 @@
 -dontwarn sun.misc.**
 #-keep class com.google.gson.stream.** { *; }
 
+-keep class com.google.gson.reflect.TypeToken { *; }
+
+-keep class * extends com.google.gson.reflect.TypeToken
+
 # Application classes that will be serialized/deserialized over Gson
 -keep class com.google.gson.examples.android.model.** { <fields>; }
+
+-keepclassmembers,allowobfuscation class * {
+  @com.google.gson.annotations.SerializedName <fields>;
+}
+
+-keep class * {
+  @com.google.gson.annotations.SerializedName <fields>;
+}
+-keepnames class com.fasterxml.jackson.databind.** { *; }
+-dontwarn com.fasterxml.jackson.databind.**
 
 # Prevent proguard from stripping interface information from TypeAdapter, TypeAdapterFactory,
 # JsonSerializer, JsonDeserializer instances (so they can be used in @JsonAdapter)
