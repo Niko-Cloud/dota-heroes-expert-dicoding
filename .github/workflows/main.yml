@@ -30,7 +30,11 @@ jobs:
 
       - name: Run Tests and Code Style Checks
         run: |
-          ./gradlew lint test detekt
+          ./gradlew lint test
+          
+      - name: Run Code Style Checks
+        run: |
+          ./gradlew detekt lint
 
       - name: Store Test Results
         uses: actions/upload-artifact@v2
