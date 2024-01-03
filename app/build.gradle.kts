@@ -11,11 +11,9 @@ plugins {
 }
 
 detekt {
-    buildUponDefaultConfig = true // preconfigure defaults
-    allRules = false // activate all available (even unstable) rules. // point to your custom config defining rules to run, overwriting default behavior
+    buildUponDefaultConfig = true
 }
 
-// Kotlin DSL
 tasks.withType<Detekt>().configureEach {
     reports {
         xml.required.set(true)
@@ -51,7 +49,14 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+        debug {
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

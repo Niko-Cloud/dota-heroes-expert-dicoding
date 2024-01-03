@@ -24,7 +24,7 @@ class NetworkModule {
         val certificatePinner = CertificatePinner.Builder()
             .add("api.opendota.com", "sha256/xCNjlkI9mPUm9o3T8Kz6NpMGFT7d1MITiYjbiNZngM=")
             .add("api.opendota.com", "sha256/81Wf12bcLlFHQAfJluxnzZ6Frg+oJ9PWY/Wrwur8viQ=")
-            .add("api.opendota.com","sha256/hxqRlPTu1bMS/0DITB1SSu0vd4u/8l8TjPgfaAp63Gc=")
+            .add("api.opendota.com", "sha256/hxqRlPTu1bMS/0DITB1SSu0vd4u/8l8TjPgfaAp63Gc=")
         return OkHttpClient.Builder()
             .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
             .connectTimeout(TIME, TimeUnit.SECONDS)
