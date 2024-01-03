@@ -16,6 +16,9 @@
         android:theme="@style/Theme.DotaHeroesBase"
         tools:targetApi="31">
         <activity
+            android:name=".ui.webviewdocs.WebViewDocsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.detail.DetailActivity"
             android:exported="false" />
         <activity
