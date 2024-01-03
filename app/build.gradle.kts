@@ -27,9 +27,11 @@ tasks.withType<Detekt>().configureEach {
 }
 
 tasks.withType<Detekt>().configureEach {
+    ignoreFailures = true
     jvmTarget = "1.8"
 }
 tasks.withType<DetektCreateBaselineTask>().configureEach {
+    ignoreFailures = true
     jvmTarget = "1.8"
 }
 

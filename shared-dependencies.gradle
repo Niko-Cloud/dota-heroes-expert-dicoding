@@ -34,6 +34,6 @@ dependencies{
     debugImplementation("com.squareup.leakcanary:leakcanary-android:2.12")
 
     //SQL cipher
-    implementation ("net.zetetic:sqlcipher-android:4.5.2@aar")
+    implementation ("net.zetetic:android-database-sqlcipher:4.5.4")
     implementation ("androidx.sqlite:sqlite-ktx:2.4.0")
 }
